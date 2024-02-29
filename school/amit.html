@@ -46,6 +46,7 @@
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="notice.html">Notice</a></li>
+
             </ul>
         </nav>
     </div>
@@ -62,7 +63,7 @@
         </ul>
 
         <h3>Send us a message:</h3>
-        <form id="contactForm">
+        <form action="https://script.google.com/macros/s/AKfycbwxfnqK8LwLMFFbZjGd-KmyYxPIsuke-BcOZS67mGKrrLrXpLoAlpH3prsOOUuvpjAF/exec" method="post"> 
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -72,7 +73,7 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
 
-            <button type="submit" onclick="submitForm()">Send</button>
+            <button type="submit">Send</button>
         </form>
 
         <h3>Follow us on social media:</h3>
@@ -90,33 +91,6 @@
         <p>&copy; 2024 My School. All rights reserved.</p>
     </div>
 </footer>
-
-<script>
-    function submitForm() {
-        const form = document.getElementById('contactForm');
-        const formData = new FormData(form);
-
-        fetch('https://script.google.com/macros/s/AKfycbwxfnqK8LwLMFFbZjGd-KmyYxPIsuke-BcOZS67mGKrrLrXpLoAlpH3prsOOUuvpjAF/exec', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(data => {
-            console.log(data); // You can handle success response here
-            alert('Message sent successfully!');
-            form.reset(); // Reset the form after successful submission
-        })
-        .catch(error => {
-            console.error('There was a problem with your fetch operation:', error);
-            alert('An error occurred while sending the message. Please try again later.');
-        });
-    }
-</script>
 
 </body>
 </html>
