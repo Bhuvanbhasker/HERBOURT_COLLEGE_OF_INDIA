@@ -8,6 +8,31 @@
     <link rel="stylesheet" href="styles.css">
     
     <style>
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            padding: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav ul li a:hover {
+            color: #007bff;
+        }
+        
+        /* Add this new rule */
+        nav ul:hover {
+
+            transition: transform 10s;
+        }
+        
         .social-icons {
             list-style-type: none;
             padding: 0;
@@ -32,6 +57,8 @@
         .social-icons li a i {
             margin-right: 5px;
         }
+
+        
     </style>
 </head>
 <body>

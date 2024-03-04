@@ -15,5 +15,29 @@ window.onclick = function(event) {
 }
 
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    var popupWrapper = document.querySelector(".popup-wrapper");
+    var popup = document.querySelector(".popup");
+    var closeBtn = document.querySelector(".close");
+
+    // Show popup after 5 seconds (adjust the delay as needed)
+    setTimeout(function() {
+        popupWrapper.style.display = "block";
+    }, 5000);
+
+    // Close popup when close icon is clicked
+    closeBtn.addEventListener("click", function() {
+        popupWrapper.style.display = "none";
+    });
+
+    // Close popup when user clicks outside of the popup
+    window.addEventListener("click", function(event) {
+        if (event.target == popupWrapper) {
+            popupWrapper.style.display = "none";
+        }
+    });
+});
+
     
 
